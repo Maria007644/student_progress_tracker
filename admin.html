@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Teacher dashboard for student progress.">
+  <title>Teacher Dashboard · Student Progress Tracker</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <main class="page-shell admin-shell">
+    <nav class="top-nav"><a href="./index.html">← View student tracker</a></nav>
+    <section id="auth-loading" class="panel centered"><p class="status">Loading...</p></section>
+    <section id="login-section" class="panel login-card hidden" aria-labelledby="login-title">
+      <p class="eyebrow">Restricted area</p><h1 id="login-title">Teacher Login</h1>
+      <form id="login-form">
+        <label>Email<input id="email" type="email" autocomplete="username" required></label>
+        <label>Password<input id="password" type="password" autocomplete="current-password" required></label>
+        <p id="login-error" class="message error" role="alert"></p>
+        <button class="button primary" type="submit">Log in</button>
+      </form>
+    </section>
+
+    <section id="dashboard" class="hidden">
+      <header class="dashboard-header">
+        <div><p class="eyebrow">Administration</p><h1>Teacher Dashboard</h1></div>
+        <button id="logout-button" class="button secondary" type="button">Log out</button>
+      </header>
+      <section class="panel">
+        <div class="section-heading"><div><p class="eyebrow">Students</p><h2>Select a student</h2></div><span id="admin-students-status" class="status" role="status"></span></div>
+        <div id="admin-student-list" class="student-list"></div>
+      </section>
+      <section id="editor-section" class="panel hidden">
+        <div class="section-heading"><div><p class="eyebrow">Results</p><h2 id="editor-title"></h2></div><button id="add-unit-button" class="button primary" type="button">+ Add Unit</button></div>
+        <p id="editor-status" class="status" role="status"></p>
+        <div id="admin-unit-list" class="unit-grid admin-units"></div>
+      </section>
+    </section>
+  </main>
+  <script type="module" src="./js/admin.js"></script>
+</body>
+</html>

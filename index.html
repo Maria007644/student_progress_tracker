@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View student learning progress by unit.">
+  <title>Student Progress Tracker</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <p class="eyebrow">Learning dashboard</p>
+      <h1>Student Progress Tracker</h1>
+      <p>Choose your name to see your progress</p>
+    </header>
+
+    <section class="panel" aria-labelledby="students-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Students</p><h2 id="students-title">Who are you?</h2></div>
+        <span id="students-status" class="status" role="status">Loading...</span>
+      </div>
+      <div id="student-list" class="student-list" aria-live="polite"></div>
+    </section>
+
+    <section id="progress-section" class="panel hidden" aria-labelledby="progress-title">
+      <div class="progress-summary">
+        <div><p class="eyebrow">Your progress</p><h2 id="progress-title"></h2></div>
+        <div class="overall"><span>Overall progress</span><strong id="overall-progress">0%</strong></div>
+      </div>
+      <p id="progress-status" class="status" role="status"></p>
+      <div id="unit-list" class="unit-grid"></div>
+    </section>
+  </main>
+  <footer><a href="./admin.html">Teacher</a></footer>
+  <script type="module" src="./js/tracker.js"></script>
+</body>
+</html>
